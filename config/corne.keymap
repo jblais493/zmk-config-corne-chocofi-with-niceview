@@ -133,13 +133,33 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp DA_EXCL           &kp DA_AT                     &kp DA_POUND             &kp DA_DOLLAR                       &kp DA_PERCENT    &kp DA_CARET  &kp DA_AMPS   &kp DA_ASTRK  &kp DA_GRAVE  &kp DA_TILDE  &none
-&none  &hm LEFT_META DA_DQT  &hm LEFT_ALT DA_LEFT_BRACKET  &hm LCTRL DA_LEFT_BRACE  &hm LEFT_SHIFT DA_LEFT_PARENTHESIS  &kp GRAVE         &kp DA_FSLH   &kp DA_MINUS  &kp DA_EQUAL  &kp DA_COLON  &kp DA_SEMI   &none
-&none  &kp DA_SQT            &kp DA_RIGHT_BRACKET          &kp DA_RIGHT_BRACE       &kp DA_RIGHT_PARENTHESIS            &kp AMPERSAND     &kp DA_BSLH   &kp DA_UNDER  &kp DA_PLUS   &kp DA_PIPE   &kp DA_QMARK  &none
+&none  &kp DA_EXCL           &kp DA_AT                     &kp DA_POUND             &kp DA_DOLLAR                       &kp DA_PERCENT    &kp DA_CARET  &kp DA_AMPS   &kp DA_ASTRK  &kp DA_GRAVE      &kp DA_TILDE         &none
+&none  &hm LEFT_META DA_DQT  &hm LEFT_ALT DA_LEFT_BRACKET  &hm LCTRL DA_LEFT_BRACE  &hm LEFT_SHIFT DA_LEFT_PARENTHESIS  &kp GRAVE         &kp DA_FSLH   &kp DA_MINUS  &kp DA_EQUAL  &kp DA_LESS_THAN  &kp DA_GREATER_THAN  &none
+&none  &kp DA_SQT            &kp DA_RIGHT_BRACKET          &kp DA_RIGHT_BRACE       &kp DA_RIGHT_PARENTHESIS            &kp AMPERSAND     &kp DA_BSLH   &kp DA_UNDER  &kp DA_PLUS   &kp DA_PIPE       &kp DA_QMARK         &none
                                                            &none                    &trans                              &trans            &trans        &trans        &trans
             >;
 
             label = "left";
+        };
+
+        tri {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "tri";
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };

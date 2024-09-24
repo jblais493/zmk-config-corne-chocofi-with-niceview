@@ -6,6 +6,7 @@
 
 #include "keys_da.h"
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -144,10 +145,10 @@
 
         tri {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &bt BT_SEL 0  &trans  &trans  &kp C_MUTE    &kp C_PP        &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &bt BT_SEL 1  &trans  &trans  &kp C_VOL_UP  &kp C_NEXT      &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &bt BT_SEL 2  &trans  &trans  &kp C_VOL_DN  &kp C_PREVIOUS  &trans
+                        &trans  &trans  &trans    &trans        &trans  &trans
             >;
 
             label = "tri";
